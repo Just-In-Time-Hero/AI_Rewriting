@@ -1,0 +1,17 @@
+n = 1
+if (n == 1):
+    n += 1
+    f = open("writeTest.py", "r+")
+    reader = f.readlines()
+    f.seek(0)
+    writer = "n = " + str(n)
+    f.write(writer + "\n")
+    f.write("if (n == " + str(n) + "):\n")
+    if (len(writer) >= len(reader[0])):
+        for i in range(2,len(reader)):
+            f.write(reader[i])
+    f.close()
+    print("Hello: " + str(n))
+    f = open("writeTest.py")
+    exec(f.read())
+    f.close()
